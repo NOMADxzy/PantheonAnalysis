@@ -413,9 +413,9 @@ class TunnelGraph(object):
             'delay_t': self.delays_t,
             'delay': self.delays
         }
-        sys.stderr.write(str(json_results))
+        sys.stderr.write(self.tunnel_log + "_______________________________\n")
 
-        with open(os.path.join('detail', '{}_detail.json'.format("pcc")), 'w') as file:
+        with open(os.path.join('detail', '{}_detail.json'.format(self.tunnel_log)), 'w') as file:
             json.dump(json_results, file)
 
         tunnel_results = {}
